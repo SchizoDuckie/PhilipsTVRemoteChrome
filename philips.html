@@ -1,0 +1,120 @@
+<!doctype html>
+<html ng-app="PhilipsRC" ng-csp>
+<head>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body style="margin:0; padding:0; width: 400px; height: 600px; overflow:hidden">
+
+<div ng-controller="MainController as main">
+    <remote-button top='562' left='90'  action="'VolumeDown'"></remote-button>
+    <remote-button top='562' left='260' action="'VolumeUp'"></remote-button>
+    <remote-button top='562' left='175' action="'Mute'"></remote-button>
+    <remote-button top='562' left='0' action="'Home'"></remote-button>
+    <remote-button top='562' left='350' action="'Standby'"></remote-button>
+
+   <div style='position: absolute; top: 520px; left: 105px; right:50px; height:30px;'>
+        <button class='switchpanel' ng-class="{ active: main.panel === 1 }" ng-click='main.panel=1; setSetting("main.panel", 1)' ><em class='circle'></em></button>
+        <button class='switchpanel' ng-class="{ active: main.panel === 2 }" ng-click='main.panel=2; setSetting("main.panel", 2)'><em class='circle'></em></button>
+        <button class='switchpanel' ng-class="{ active: main.panel === 3 }" ng-click='main.panel=3; setSetting("main.panel", 3)'><em class='circle'></em></button>
+        <button class='switchpanel' ng-class="{ active: main.panel === 4 }" ng-click='main.panel=4; setSetting("main.panel", 4)'><em class='circle'></em></button>
+        <button class='switchpanel' ng-class="{ active: main.panel === 5 }" ng-click='main.panel=5; setSetting("main.panel", 5)'><em class='circle'></em></button>
+    </div>
+    <!-- 
+
+Adjust, AmbilightOnOff, Back, BlueColour, ChannelStepDown, ChannelStepUp, Confirm, 
+                CursorDown, CursorLeft, CursorRight, CursorUp, 
+                Digit0, Digit1, Digit2, Digit3, Digit4, Digit5, Digit6, Digit7, Digit8, Digit9, Dot,
+                FastForward, Find, GreenColour, Home, Info, Mute, Next, Online, 
+                Options, Pause, PlayPause, Previous, Record, RedColour, Rewind,  
+                Source, Standby, Stop, Subtitle, Teletext, Viewmode, VolumeDown, VolumeUp, WatchTV, YellowColour  -->
+    <div ng-if="main.panel == 1;">
+        <img src="background4.png" style='width:400px; height:600px'>
+        <remote-button top='0'  left='0'  width='132' height='168' action="'ChannelStepDown'"></remote-button>
+        <remote-button top='0'  left='135' width='130' height='168' action="'CursorUp'"></remote-button>
+        <remote-button top='0'  left='268' width='132' height='168' action="'ChannelStepUp'"></remote-button>
+        <remote-button top='171' left='0'  width='132' height='175' action="'CursorLeft'"></remote-button>
+        <remote-button top='171' left='135' width='130' height='175' action="'Confirm'"></remote-button>
+        <remote-button top='171' left='268' width='132' height='175' action="'CursorRight'"></remote-button>
+        <remote-button top='349' left='0'  width='132' height='170' action="'Back'"></remote-button>
+        <remote-button top='349' left='135' width='130' height='170' action="'CursorDown'"></remote-button>
+        <remote-button top='349' left='268' width='132' height='170' action="'ViewMode'"></remote-button>
+    </div>
+
+    <div ng-if="main.panel == 2">
+        <img src="background2.png" style='width:400px; height:600px'>
+        <remote-button top='0'  left='0'  width='132' height='169' action="'Record'"></remote-button>
+        <remote-button top='0'  left='135' width='130' height='169' action="'Stop'"></remote-button>
+        <remote-button top='172' left='0'  width='132' height='176' action="'Previous'"></remote-button>
+        <remote-button top='172' left='135' width='130' height='176' action="'Pause'"></remote-button>
+        <remote-button top='172' left='268' width='135' height='176' action="'Next'"></remote-button>
+        <remote-button top='351' left='0'  width='132' height='170' action="'Rewind'"></remote-button>
+        <remote-button top='351' left='135' width='130' height='170' action="'Play'"></remote-button>
+        <remote-button top='351' left='268' width='135' height='170' action="'FastForward'"></remote-button>
+    </div>
+    <div ng-if="main.panel == 3">
+        <img src="background3.png" style='width:400px; height:600px'>
+        <remote-button top='0' left='0'   width='100' height='20' action="'Red'"></remote-button>
+        <remote-button top='0' left='100' width='100' height='20' action="'Green'"></remote-button>
+        <remote-button top='0' left='200' width='100' height='20' action="'Yellow'"></remote-button>
+        <remote-button top='0' left='300' width='100' height='20' action="'Blue'"></remote-button>
+        
+
+        <remote-button top='20'  left='0'   width='132' height='125' action="'Digit1'"></remote-button>
+        <remote-button top='20'  left='135' width='130' height='125' action="'Digit2'"></remote-button>
+        <remote-button top='20'  left='268' width='132' height='125' action="'Digit3'"></remote-button>
+        <remote-button top='148' left='0'   width='131' height='118' action="'Digit4'"></remote-button>
+        <remote-button top='148' left='135' width='130' height='118' action="'Digit5'"></remote-button>
+        <remote-button top='148' left='268' width='131' height='118' action="'Digit6'"></remote-button>
+        <remote-button top='267' left='0'   width='132' height='118' action="'Digit7'"></remote-button>
+        <remote-button top='267' left='135' width='130' height='118' action="'Digit8'"></remote-button>
+        <remote-button top='267' left='268' width='132' height='118' action="'Digit9'"></remote-button>
+
+        <remote-button top='388' left='0'   width='132' height='125' action="'Teletext'"></remote-button>
+        <remote-button top='388' left='135' width='130' height='125' action="'Digit0'"></remote-button>
+        <remote-button top='388' left='268' width='132' height='125' action="'Dot'"></remote-button>
+    </div>
+    <div ng-if="main.panel == 4">
+        <img src="background.png" style='width:400px; height:600px'>
+        <remote-button top='35' left='35' width='60' height='60' action="'Source'" ng-click="main.panel=1"></remote-button>
+        <remote-button top='35' left='168' width='60' height='60' action="'WatchTV'"></remote-button>
+        <remote-button top='35' left='300' width='60' height='60' action="'NetTV'"></remote-button>
+        <remote-button top='215' left='35' width='60' height='60' action="'Options'" ng-click="main.panel=1"></remote-button>
+        <remote-button top='215' left='168' width='60' height='60' action="'Adjust'" ng-click='main.panel=1'></remote-button>
+        <remote-button top='215' left='300' width='60' height='60' action="'Info'"></remote-button>
+        <remote-button top='392' left='168' width='60' height='60' action="'Online'" ng-click='main.panel=1'></remote-button>
+    </div>
+
+     <div ng-if="main.panel == 5">
+        <img src="background-clean.png" style='width:400px; height:600px'>
+        <div style='position: absolute; top: 0px; left:0px; color:white; padding:10px;'>
+        <h1>TV Remote for Chrome</h1>
+        <h3>for Philips Smart TVs</h3>
+        <button class="btn btn-normal" style='width:100%; margin-top:50px; margin-bottom:100px' ng-click="main.showDeviceList()">Select a TV</button>
+        <h3>Brought to you by SchizoDuckie</h3>
+
+        <p>Website: <a href='http://schizoduckie.github.io/PhilipsRemote' target='_blank'>schizoduckie.github.io/PhilipsRemote </a></p>
+        <p>Chrome webstore: </p>
+
+        </div>
+        
+    </div>
+    
+</div>
+
+<script src="js/vendor/angular.js"></script>
+<script src="js/vendor/dialogs.quacked.js"></script>
+<script src="js/vendor/ui-bootstrap-tpls-0.13.0.min.js"></script>
+<script src="js/vendor/angular-sanitize.min.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/SettingsService.js"></script>
+<script src="js/PhilipsService.js"></script>
+<script src="js/PortScannerService.js"></script>
+<script src="js/RemoteButton.js"></script>
+<script src="js/DeviceListController.js"></script>
+<script src="js/main.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/dialogs.css" />
+</body>
+</html>

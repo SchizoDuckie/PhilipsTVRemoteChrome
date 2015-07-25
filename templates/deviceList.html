@@ -1,0 +1,8 @@
+<h2>Select your television</h2>
+<h4 ng-if="!vm.ready">Scanning.. please wait</h4>
+<h4 ng-if="vm.ready && vm.devices.length == 0">No devices found :(</h4>
+
+<ul ng-if="vm.ready && vm.devices.length > 0">
+	<li ng-repeat="device in vm.devices"><a class="btn" ng-click="vm.select(device);">{{device.name}} ({{device.address}})<br> <small>{{ device.model }}</small></a>
+	</li>
+</ul> 

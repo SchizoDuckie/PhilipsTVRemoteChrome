@@ -1,0 +1,68 @@
+html,body {
+    overflow-y:hidden;
+}
+
+remote-button .btn {
+    background-color: transparent;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transition: all 0.2s ease-in;
+}
+
+remote-button .btn:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+.switchpanel {
+    background-color: transparent; 
+    border: 0; 
+    width:35px; 
+    height:40px;
+    font-size: 200px;
+    position: relative;
+    outline:0;
+
+}
+
+.switchpanel.active {
+    color: white;
+}
+
+.switchpanel .circle {
+  background: #B0B0B0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  left: 25%;
+  top: 25%;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-in;
+}
+
+.switchpanel .circle:hover {
+    -webkit-transform: scale(1.2);
+    -webkit-transform-origin: center center;
+}
+
+.switchpanel.active .circle {
+    background: #fff;
+}
+
+.modal-content a.btn, .btn.btn-normal {
+    border: 1px solid white;
+    width: 90%;
+    -webkit-transition: all 0.2s ease-in;
+    background-color: rgba(255,255,255,0.1)
+}
+
+.modal-content a.btn:hover, .btn.btn-normal:hover {
+    background-color: rgba(255,255,255,0.3);
+    color:white;
+}
+
+.modal-content a.btn:focus, .btn.btn-normal:focus {
+    background-color: rgba(255,255,255,0.3);
+    color:white;
+    text-decoration:underline;
+}
