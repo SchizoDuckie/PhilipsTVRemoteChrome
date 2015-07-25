@@ -15,7 +15,8 @@ PhilipsRC
             settings: {},
             defaults: {
                 'devices.available': [],
-                'devices.selected': false
+                'devices.selected': false,
+                'main.panel': 1
             },
             /**
              * Read a setting key and return either the stored value or the default

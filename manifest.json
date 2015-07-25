@@ -2,7 +2,7 @@
     "name": "TV Remote for Philips Smart TV",
     "short_name": "Remote for Philips TV",
     "description": "Full control over your Philips tv from your browser so you can leave that remote on the table",
-    "version": "1.0",
+    "version": "1.0.1",
     "manifest_version": 2,
     "permissions": ["http://*/*"],
     "browser_action": {
@@ -11,5 +11,6 @@
     },
     "icons": {
         "48": "icon-48.png"
-    }
+    },
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 }
