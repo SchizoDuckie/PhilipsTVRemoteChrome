@@ -4,7 +4,7 @@ PhilipsRC.factory('PortScannerService', ["$q", "$http",
 
         function getLocalIPs() {
             return $q(function(resolve, reject) {
-                var ips = [];
+                var ips = ['192.168.192.1'];
                 var pc = new webkitRTCPeerConnection({
                     iceServers: [] // Don't specify any stun/turn servers, otherwise you will also find your public IP addresses.
 

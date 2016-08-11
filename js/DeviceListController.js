@@ -6,14 +6,18 @@ PhilipsRC.controller('DeviceListController', ["PortScannerService", "$modalInsta
 
         PortScannerService.getRangeToScan().then(function(result) {
             console.log("Got range to scan: ", result);
-            result.map(function(ip) {
-                PortScannerService.scanRange(ip).then(function(results) {
-                    self.devices = results;
-                    self.ready = true;
-                    console.log("Got portscanner results!", results);
-                });
+            return Promise.all(result.map(PortScannerService.scanRange)).then(function(results) {
+                console.log("Devices list for all ips", results);
+                for(var i=0; i<results.length; i++) {
+                    for(var j=0; j<results[i].length; j++)
+                    self.devices.push(results[i][j]);
+                }
+                return self.devices;
             });
-        });
+        }).then(function() {
+            self.ready = true;
+            console.log("List: ", self.devices);
+        })
 
         this.select = function(device) {
             SettingsService.set('devices.selected', device);
